@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Northwind.CurrencyServices\Northwind.CurrencyServices.csproj" />
     <ProjectReference Include="..\Northwind.ReportingServices\Northwind.ReportingServices.csproj" />
+    <ProjectReference Include="..\Northwind.ReportingServices.SqlService\Northwind.ReportingServices.SqlService.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

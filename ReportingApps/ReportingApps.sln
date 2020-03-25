@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.CurrencyServices"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.ReportingServices", "Northwind.ReportingServices\Northwind.ReportingServices.csproj", "{02A234B1-73A3-46CF-A0A6-2D740D41677A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.ReportingServices.SqlService", "Northwind.ReportingServices.SqlService\Northwind.ReportingServices.SqlService.csproj", "{194C0F2A-3069-403E-9DF3-D860822F047E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{02A234B1-73A3-46CF-A0A6-2D740D41677A}.Release|x64.Build.0 = Release|Any CPU
 		{02A234B1-73A3-46CF-A0A6-2D740D41677A}.Release|x86.ActiveCfg = Release|Any CPU
 		{02A234B1-73A3-46CF-A0A6-2D740D41677A}.Release|x86.Build.0 = Release|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Debug|x64.Build.0 = Debug|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Debug|x86.Build.0 = Debug|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Release|x64.ActiveCfg = Release|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Release|x64.Build.0 = Release|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Release|x86.ActiveCfg = Release|Any CPU
+		{194C0F2A-3069-403E-9DF3-D860822F047E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
