@@ -30,6 +30,8 @@ namespace NorthwindApiApp
             services.AddControllers();
             services.AddDbContext<NorthwindContext>(op => op.UseInMemoryDatabase("Northwind"));
             services.AddScoped<IProductManagementService, ProductManagementService>();
+            services.AddScoped<IProductCategoryManagementService, ProductCategoryManagementService>();
+            services.AddScoped<IProductCategoryPicturesService, ProductCategoryPicturesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

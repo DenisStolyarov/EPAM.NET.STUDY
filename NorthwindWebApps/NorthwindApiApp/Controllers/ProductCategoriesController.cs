@@ -17,15 +17,17 @@ namespace NorthwindApiApp.Controllers
     public class ProductCategoriesController : ControllerBase
     {
         private const int PaginationLimit = 15;
-        private readonly IProductManagementService productManagementService;
+        private readonly IProductCategoryManagementService productManagementService;
+        private readonly IProductCategoryPicturesService categoryPicturesService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductCategoriesController"/> class.
         /// </summary>
         /// <param name="productManagementService">The product categories management service.</param>
-        public ProductCategoriesController(IProductManagementService productManagementService)
+        public ProductCategoriesController(IProductCategoryManagementService productManagementService, IProductCategoryPicturesService categoryPicturesService)
         {
             this.productManagementService = productManagementService;
+            this.categoryPicturesService = categoryPicturesService;
         }
 
         // GET: api/ProductCategories
@@ -100,7 +102,7 @@ namespace NorthwindApiApp.Controllers
         [HttpGet("{id}/picture")]
         public IActionResult ReadPicture(int id)
         {
-            if (!this.productManagementService.TryShowPicture(id, out byte[] bytes))
+            if (!this.categoryPicturesService.TryShowPicture(id, out byte[] bytes))
             {
                 return this.NotFound();
             }
@@ -124,7 +126,7 @@ namespace NorthwindApiApp.Controllers
                     ms.Write(buffer, 0, read);
                 }
 
-                if (!this.productManagementService.UpdatePicture(id, ms))
+                if (!this.categoryPicturesService.UpdatePicture(id, ms))
                 {
                     return this.NotFound();
                 }
@@ -139,7 +141,7 @@ namespace NorthwindApiApp.Controllers
         [HttpDelete("{id}/picture")]
         public IActionResult DeletePicture(int id)
         {
-            if (!this.productManagementService.DestroyPicture(id))
+            if (!this.categoryPicturesService.DestroyPicture(id))
             {
                 return this.NotFound();
             }
