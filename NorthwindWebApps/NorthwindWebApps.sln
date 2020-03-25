@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindApiApp", "NorthwindApiApp\NorthwindApiApp.csproj", "{EC658DE4-348B-4B98-B33A-B3CF8A0691CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindApiApp", "NorthwindApiApp\NorthwindApiApp.csproj", "{EC658DE4-348B-4B98-B33A-B3CF8A0691CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Services", "Northwind.Services\Northwind.Services.csproj", "{6FA892D9-62ED-4307-B9CD-B2BF2BCDBD0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Services", "Northwind.Services\Northwind.Services.csproj", "{6FA892D9-62ED-4307-B9CD-B2BF2BCDBD0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17065A58-DC73-4BEC-A913-3F3E6D07C633}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Services.EntityFrameworkCore", "Northwind.Services.EntityFrameworkCore\Northwind.Services.EntityFrameworkCore.csproj", "{52BD0428-CC2F-412E-ACB1-045B946564A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{6FA892D9-62ED-4307-B9CD-B2BF2BCDBD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FA892D9-62ED-4307-B9CD-B2BF2BCDBD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FA892D9-62ED-4307-B9CD-B2BF2BCDBD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BD0428-CC2F-412E-ACB1-045B946564A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BD0428-CC2F-412E-ACB1-045B946564A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BD0428-CC2F-412E-ACB1-045B946564A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BD0428-CC2F-412E-ACB1-045B946564A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

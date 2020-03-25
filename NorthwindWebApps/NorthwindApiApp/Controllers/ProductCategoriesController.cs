@@ -13,6 +13,7 @@ namespace NorthwindApiApp.Controllers
 {
     /// <inheritdoc/>
     [Route("api/[controller]")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]
     public class ProductCategoriesController : ControllerBase
     {
@@ -30,14 +31,14 @@ namespace NorthwindApiApp.Controllers
             this.categoryPicturesService = categoryPicturesService;
         }
 
-        // GET: api/ProductCategories
+        [ApiConventionMethod(typeof(IEnumerable<ProductCategory>), nameof(DefaultApiConventions.Get))]
         [HttpGet]
         public IEnumerable<ProductCategory> Read()
         {
             return this.productManagementService.ShowCategories(0, PaginationLimit);
         }
 
-        // GET: api/ProductCategories/5
+        [ProducesResponseType(typeof(ProductCategory), StatusCodes.Status200OK)]
         [HttpGet("{id}")]
         public IActionResult Read(int id)
         {
@@ -51,7 +52,7 @@ namespace NorthwindApiApp.Controllers
             }
         }
 
-        // POST: api/ProductCategories
+        [ApiConventionMethod(typeof(ProductCategory), nameof(DefaultApiConventions.Post))]
         [HttpPost]
         public ActionResult<ProductCategory> Create(ProductCategory category)
         {
@@ -60,7 +61,7 @@ namespace NorthwindApiApp.Controllers
             return this.CreatedAtAction(nameof(this.Read), new { id = categoryId }, category);
         }
 
-        // PUT: api/ProductCategories/5
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
         [HttpPut("{id}")]
         public IActionResult Update(int id, ProductCategory category)
         {
@@ -84,7 +85,7 @@ namespace NorthwindApiApp.Controllers
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -99,6 +100,7 @@ namespace NorthwindApiApp.Controllers
         }
 
         // GET: api/ProductCategories/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet("{id}/picture")]
         public IActionResult ReadPicture(int id)
         {
@@ -112,7 +114,10 @@ namespace NorthwindApiApp.Controllers
             }
         }
 
-        // PUT: api/ProductCategories/5
+        [ProducesDefaultResponseType]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPut("{id}/picture")]
         public async Task<IActionResult> UpdateImage(int id)
         {

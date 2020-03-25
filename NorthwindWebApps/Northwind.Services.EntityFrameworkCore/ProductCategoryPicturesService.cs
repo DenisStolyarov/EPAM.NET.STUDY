@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
+using Northwind.Services.Products;
 
-namespace Northwind.Services.Products
+namespace Northwind.Services.EntityFrameworkCore
 {
     /// <inheritdoc/>
     public class ProductCategoryPicturesService : IProductCategoryPicturesService
