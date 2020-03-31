@@ -9,7 +9,7 @@ namespace Northwind.Services.EntityFrameworkCore
     /// <summary>
     /// Represents a stub for a product management service.
     /// </summary>
-    public sealed class ProductManagementService : IProductManagementService
+    public sealed class ProductManagementService : IProductCategoriesManagementService
     {
         private readonly NorthwindContext context;
 

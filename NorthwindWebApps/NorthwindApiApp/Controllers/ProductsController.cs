@@ -14,13 +14,13 @@ namespace NorthwindApiApp.Controllers
     public class ProductsController : ControllerBase
     {
         private const int PaginationLimit = 15;
-        private readonly IProductManagementService productManagementService;
+        private readonly IProductCategoriesManagementService productManagementService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductsController"/> class.
         /// </summary>
         /// <param name="productManagementService">The product management service.</param>
-        public ProductsController(IProductManagementService productManagementService)
+        public ProductsController(IProductCategoriesManagementService productManagementService)
         {
             this.productManagementService = productManagementService;
         }

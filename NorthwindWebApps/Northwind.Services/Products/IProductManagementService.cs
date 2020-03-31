@@ -5,7 +5,7 @@ namespace Northwind.Services.Products
     /// <summary>
     /// Represents a management service for products.
     /// </summary>
-    public interface IProductManagementService
+    public interface IProductCategoriesManagementService
     {
         /// <summary>
         /// Shows a list of products using specified offset and limit for pagination.
