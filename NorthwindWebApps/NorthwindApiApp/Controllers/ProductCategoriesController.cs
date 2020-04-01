@@ -13,7 +13,7 @@ namespace NorthwindApiApp.Controllers
 {
     /// <inheritdoc/>
     [Route("api/[controller]")]
-    [ApiConventionType(typeof(DefaultApiConventions))]
+    //[ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]
     public class ProductCategoriesController : ControllerBase
     {
@@ -31,14 +31,14 @@ namespace NorthwindApiApp.Controllers
             this.categoryPicturesService = categoryPicturesService;
         }
 
-        [ApiConventionMethod(typeof(IEnumerable<ProductCategory>), nameof(DefaultApiConventions.Get))]
+        //[ApiConventionMethod(typeof(IEnumerable<ProductCategory>), nameof(DefaultApiConventions.Get))]
         [HttpGet]
         public IEnumerable<ProductCategory> Read()
         {
             return this.productManagementService.ShowCategories(0, PaginationLimit);
         }
 
-        [ProducesResponseType(typeof(ProductCategory), StatusCodes.Status200OK)]
+        //[ProducesResponseType(typeof(ProductCategory), StatusCodes.Status200OK)]
         [HttpGet("{id}")]
         public IActionResult Read(int id)
         {
@@ -52,7 +52,7 @@ namespace NorthwindApiApp.Controllers
             }
         }
 
-        [ApiConventionMethod(typeof(ProductCategory), nameof(DefaultApiConventions.Post))]
+        //[ApiConventionMethod(typeof(ProductCategory), nameof(DefaultApiConventions.Post))]
         [HttpPost]
         public ActionResult<ProductCategory> Create(ProductCategory category)
         {
@@ -61,7 +61,7 @@ namespace NorthwindApiApp.Controllers
             return this.CreatedAtAction(nameof(this.Read), new { id = categoryId }, category);
         }
 
-        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
+        //[ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
         [HttpPut("{id}")]
         public IActionResult Update(int id, ProductCategory category)
         {
@@ -85,7 +85,7 @@ namespace NorthwindApiApp.Controllers
             }
         }
 
-        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
+        //[ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Northwind.Services.EntityFrameworkCore;
 using Northwind.Services.Products;
+using NorthwindApiApp.Items;
+using NorthwindApiApp.Items.Products;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace NorthwindApiApp
@@ -29,9 +31,19 @@ namespace NorthwindApiApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped((service) =>
+            {
+                var sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                sqlConnection.Open();
+                return sqlConnection;
+            });
+
+            services.AddTransient<NorthwindDataAccessFactory, SqlServerDataAccessFactory>();
+
             services.AddDbContext<NorthwindContext>(op => op.UseInMemoryDatabase("Northwind"));
             services.AddScoped<IProductManagementService, ProductManagementService>();
-            services.AddScoped<IProductCategoryManagementService, ProductCategoryManagementService>();
+            //services.AddScoped<IProductCategoryManagementService, ProductCategoryManagementService>(); ProductCategoriesManagementDataAccessService
+            services.AddScoped<IProductCategoryManagementService, ProductCategoriesManagementDataAccessService>();
             services.AddScoped<IProductCategoryPicturesService, ProductCategoryPicturesService>();
         }
 
